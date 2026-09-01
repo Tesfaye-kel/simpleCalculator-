@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A clean and modern calculator built with HTML, CSS, and JavaScript."
+    />
+    <meta name="author" content="Tesfaye Kelbesa" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="Simple Calculator" />
+    <meta
+      property="og:description"
+      content="Simple calculator project with a polished design and JavaScript logic."
+    />
+    <meta property="og:type" content="website" />
     <title>Simple Calculator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="calculator">
-        <input type="text" id="result" placeholder="0" disabled>
-        <div class="buttons">
-            <button onclick="clearResult()">C</button>
-            <button onclick="appendValue('/')">/</button>
-            <button onclick="appendValue('*')">*</button>
-            <button onclick="appendValue('-')">-</button>
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('+')">+</button>
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="calculateResult()" class="equals">=</button>
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-            <button onclick="appendValue('0')">0</button>
-            <button onclick="appendValue('.')">.</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="calculator" aria-label="Calculator">
+        <div class="screen-area">
+          <p class="brand">Calculator</p>
+          <input id="display" type="text" value="0" disabled aria-label="Calculator display" />
         </div>
-    </div>
+
+        <noscript>
+          <p class="noscript-message">JavaScript is required to use this calculator.</p>
+        </noscript>
+
+        <div class="buttons">
+          <button class="btn clear" data-action="clear">C</button>
+          <button class="btn operator" data-value="/">÷</button>
+          <button class="btn operator" data-value="*">×</button>
+          <button class="btn operator" data-value="-">−</button>
+
+          <button class="btn number" data-value="7">7</button>
+          <button class="btn number" data-value="8">8</button>
+          <button class="btn number" data-value="9">9</button>
+          <button class="btn operator" data-value="+">+</button>
+
+          <button class="btn number" data-value="4">4</button>
+          <button class="btn number" data-value="5">5</button>
+          <button class="btn number" data-value="6">6</button>
+          <button class="btn equal" data-action="calculate">=</button>
+
+          <button class="btn number" data-value="1">1</button>
+          <button class="btn number" data-value="2">2</button>
+          <button class="btn number" data-value="3">3</button>
+          <button class="btn number zero" data-value="0">0</button>
+
+          <button class="btn number dot" data-value=".">.</button>
+        </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
